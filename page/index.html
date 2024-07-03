@@ -5,120 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Color 홈페이지</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(45deg, #f1c99a, #faa564);
-            background-size: 200% 200%;
-            animation: bg-pan-bl 4s both infinite;
-        }
-
-        .content {
-            text-align: center;
-            color: #fff;
-        }
-
-        .tracking-in-expand {
-            -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-            animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-        }
-
-        .scale-up-center {
-            -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-            animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        }
-
-        @-webkit-keyframes bg-pan-bl {
-            0% {
-                background-position: 100% 0%;
-            }
-
-            100% {
-                background-position: 0% 100%;
-            }
-        }
-
-        @keyframes bg-pan-bl {
-            0% {
-                background-position: 100% 0%;
-            }
-
-            100% {
-                background-position: 0% 100%;
-            }
-        }
-
-        @-webkit-keyframes tracking-in-expand {
-            0% {
-                letter-spacing: -0.5em;
-                opacity: 0;
-            }
-
-            40% {
-                opacity: 0.6;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes tracking-in-expand {
-            0% {
-                letter-spacing: -0.5em;
-                opacity: 0;
-            }
-
-            40% {
-                opacity: 0.6;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @-webkit-keyframes scale-up-center {
-            0% {
-                -webkit-transform: scale(0.5);
-                transform: scale(0.5);
-            }
-
-            100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-
-        @keyframes scale-up-center {
-            0% {
-                -webkit-transform: scale(0.5);
-                transform: scale(0.5);
-            }
-
-            100% {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/index.css" />
 </head>
 
 <body>
     <div class="content">
-        <a href="http://127.0.0.1:5501/index1.html" target="_blank">
-            <img src="https://d2v80xjmx68n4w.cloudfront.net/gigs/EwczA1697528766.jpg?w=652" class="scale-up-center"
-                alt="Logo">
-        </a>
+        <img src="https://d2v80xjmx68n4w.cloudfront.net/gigs/EwczA1697528766.jpg?w=652" class="scale-up-center"
+            alt="Logo" onclick="nextPage()">
         <h1 class="tracking-in-expand">What's your personal color</h1>
-        <p>This is an example of a background animation using CSS keyframes.</p>
+        <p>당신의 퍼스널 컬러를 진단하세요.</p>
     </div>
 </body>
+
+<script src="../js/nextPage.js"></script>
 
 </html>

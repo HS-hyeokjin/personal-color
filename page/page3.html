@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼스널 컬러 진단</title>
+    <link rel="stylesheet" href="../css/page.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="text">당신의 머리카락 색상과 가깝다고 생각하는 색을 선택해주세요</div>
+        <div class="circles slide-top">
+            <div class="circle circle31" onclick="selectCircle(0, 1)"></div>
+            <div class="circle circle32" onclick="selectCircle(1, 1)"></div>
+            <div class="circle circle33" onclick="selectCircle(2, 1)"></div>
+            <div class="circle circle34" onclick="selectCircle(3, 1)"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function selectCircle(index, score) {
+        let scores = JSON.parse(localStorage.getItem('scores')) || [0, 0, 0, 0];
+        scores[index] += score;
+        localStorage.setItem('scores', JSON.stringify(scores));
+        window.location.href = 'page4.html';
+    }
+</script>
+
+</html>

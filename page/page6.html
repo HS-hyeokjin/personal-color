@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼스널 컬러 진단</title>
+    <link rel="stylesheet" href="../css/page.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="text">당신이 가장 피하는 옷 색상은 무엇인가요?</div>
+        <div class="circles slide-top">
+            <div class="circle circle61" onclick="selectCircle(0, 1)"></div>
+            <div class="circle circle62" onclick="selectCircle(1, 1)"></div>
+            <div class="circle circle63" onclick="selectCircle(2, 1)"></div>
+            <div class="circle circle64" onclick="selectCircle(3, 1)"></div>
+        </div>
+    </div>
+</body>
+<script>
+    function selectCircle(index, score) {
+        let scores = JSON.parse(localStorage.getItem('scores')) || [0, 0, 0, 0];
+        scores[index] += score;
+        localStorage.setItem('scores', JSON.stringify(scores));
+        const maxScore = Math.max(...scores);
+        const maxIndex = scores.indexOf(maxScore);
+        if (maxIndex === 0) {
+            window.location.href = 'result-spring.html';
+        } else if (maxIndex === 1) {
+            window.location.href = 'result-summer.html';
+        } else if (maxIndex === 2) {
+            window.location.href = 'result-fall.html';
+        } else {
+            window.location.href = 'result-winter.html';
+        }
+    }
+
+</script>
+
+</html>

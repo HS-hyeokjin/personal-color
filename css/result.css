@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: black;
+    text-align: center;
+}
+
+.chart-container {
+    width: 80%; 
+    max-width: 400px;
+    height: 500px;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-grid img {
+    width: 300px;
+    max-width: 400px;
+    height: 400px;
+}
+
+.result img {
+    width: 1000px;
+    max-width: 1000px;
+    height: auto;
+    margin-top: 20px;
+}
+
+h2{
+    color: black;
+}

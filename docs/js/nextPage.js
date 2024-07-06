@@ -1,4 +1,4 @@
 function nextPage() {
     localStorage.clear();
-    window.location.href = '../page/opage1.html';
+    window.location.href = '../view/opage1.html';
 }

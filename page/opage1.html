@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼스널 컬러 진단</title>
+    <link rel="stylesheet" href="../css/text-page.css" />
+</head>
+
+<body>
+    <div class="question-container slide-in-fwd-center">
+        <h1>당신이 선호하는 색상은?</h1>
+        <button onclick="selectOption(0, 1)">밝은 코랄, 피치, 크림</button>
+        <button onclick="selectOption(1, 1)">부드러운 분홍, 연한 파랑, 라일락</button>
+        <button onclick="selectOption(2, 1)">따뜻한 갈색, 올리브, 머스타드</button>
+        <button onclick="selectOption(3, 1)">짙은 파랑, 보라, 검정</button>
+    </div>
+    <script src="../js/question.js"></script>
+</body>
+<script>
+    function selectOption(index, score) {
+        let scores = JSON.parse(localStorage.getItem('scores')) || [0, 0, 0, 0];
+        scores[index] += score;
+        localStorage.setItem('scores', JSON.stringify(scores));
+        window.location.href = 'opage2.html';
+    }
+</script>
+
+</html>

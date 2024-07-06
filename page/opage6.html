@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼스널 컬러 진단</title>
+    <link rel="stylesheet" href="../css/text-page.css" />
+</head>
+
+<body>
+    <div class="question-container slide-in-fwd-center">
+        <h1>당신이 가장 잘 어울리는 헤어 컬러는?</h1>
+        <button onclick="selectOption(0, 1)">밝은 금발, 캐러멜 브라운</button>
+        <button onclick="selectOption(1, 1)">차가운 금발, 라이트 애쉬 브라운</button>
+        <button onclick="selectOption(2, 1)">짙은 갈색, 구리색</button>
+        <button onclick="selectOption(3, 1)">블랙, 딥 브라운</button>
+    </div>
+    <script src="../js/question.js"></script>
+</body>
+<script>
+    function selectOption(index, score) {
+        let scores = JSON.parse(localStorage.getItem('scores')) || [0, 0, 0, 0];
+        scores[index] += score;
+        localStorage.setItem('scores', JSON.stringify(scores));
+        window.location.href = 'page1.html';
+    }
+</script>
+
+</html>

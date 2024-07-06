@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼스널 컬러 진단</title>
+    <link rel="stylesheet" href="../css/text-page.css" />
+</head>
+
+<body>
+    <div class="question-container slide-in-fwd-center">
+        <h1>당신의 피부가 햇볕에 타는 방식은?</h1>
+        <button onclick="selectOption(0, 1)">빨리 타고 금방 노릇노릇해진다</button>
+        <button onclick="selectOption(1, 1)">빨리 타고 붉은 기운이 남는다</button>
+        <button onclick="selectOption(2, 1)">천천히 타고 노릇노릇해진다</button>
+        <button onclick="selectOption(3, 1)">거의 타지 않고 창백하게 유지된다</button>
+    </div>
+    <script src="../js/question.js"></script>
+</body>
+<script>
+    function selectOption(index, score) {
+        let scores = JSON.parse(localStorage.getItem('scores')) || [0, 0, 0, 0];
+        scores[index] += score;
+        localStorage.setItem('scores', JSON.stringify(scores));
+        window.location.href = 'opage5.html';
+    }
+</script>
+
+</html>

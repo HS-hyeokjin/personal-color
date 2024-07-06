@@ -6,9 +6,24 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(45deg, #f1c99a, #faa564);
+    background: linear-gradient(45deg, #edddca, #fdcba4);
     background-size: 200% 200%;
     animation: bg-pan-bl 4s both infinite;
+}
+
+.start-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #0056b3;
 }
 
 .content {

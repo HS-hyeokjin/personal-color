@@ -5,21 +5,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>결과-가을 웜톤</title>
-    <link rel="stylesheet" href="../css/result.css" />
+    <link rel="stylesheet" href="result.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script async src="../js/resultPage.js"></script>
+    <script async src="resultPage.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3e7dd;
+            color: #5a4633;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .chart-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        .wrapper {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px;
+        }
+
+        h3 {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            justify-items: center;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .details {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .color-swatch {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .color-swatch-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 
 <body>
     <div class="result">
-        <p id="personalColorText"><a id="colorLink"></a></p>
+        <h1>당신의 퍼스널 컬러는 가을 웜톤 입니다.</h1>
     </div>
     <div class="chart-container">
         <canvas id="resultChart"></canvas>
     </div>
 
+    <div class="details">
+        <h3>가을 웜톤 특징</h3>
+        <p>가을 웜톤은 따뜻하고 부드러운 색조로, 자연스러운 가을의 느낌을 담고 있습니다. 가을 웜톤 피부는 대체로 아이보리, 베이지, 브론즈 톤을 띠며, 따뜻한 갈색 또는 황갈색 눈동자를 가지고 있습니다.
+        </p>
+        <h3>어울리는 색상</h3>
+        <div class="color-swatch-wrapper">
+            <div class="color-swatch" style="background-color: #8B4513;"></div> <!-- 브라운 -->
+            <div class="color-swatch" style="background-color: #D2691E;"></div> <!-- 초콜릿 -->
+            <div class="color-swatch" style="background-color: #CD853F;"></div> <!-- 페루 -->
+            <div class="color-swatch" style="background-color: #F4A460;"></div> <!-- 샌디브라운 -->
+            <div class="color-swatch" style="background-color: #D2B48C;"></div> <!-- 탄 -->
+        </div>
+        <h3>피해야 할 색상</h3>
+        <div class="color-swatch-wrapper">
+            <div class="color-swatch" style="background-color: #000080;"></div> <!-- 네이비 -->
+            <div class="color-swatch" style="background-color: #4682B4;"></div> <!-- 스틸블루 -->
+            <div class="color-swatch" style="background-color: #8A2BE2;"></div> <!-- 블루바이올렛 -->
+            <div class="color-swatch" style="background-color: #7B68EE;"></div> <!-- 미디움슬레이트블루 -->
+            <div class="color-swatch" style="background-color: #00CED1;"></div> <!-- 다크터쿼이즈 -->
+        </div>
+    </div>
+
     <div class="wrapper">
-        <h2>가을 웜톤 연예인</h2>
+        <h3>가을 웜톤 연예인</h3>
         <div class="image-grid">
             <img src="../resources/fall1.jpg" alt="fall1">
             <img src="../resources/fall2.JPG" alt="fall2">
@@ -28,6 +117,34 @@
         </div>
     </div>
 
+    <script>
+        // JavaScript to initialize the chart
+        const ctx = document.getElementById('resultChart').getContext('2d');
+        const resultChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Warm Brown', 'Rich Olive', 'Deep Terracotta', 'Warm Beige'],
+                datasets: [{
+                    label: 'Color Compatibility',
+                    data: [25, 25, 25, 25],
+                    backgroundColor: ['#8B4513', '#556B2F', '#CD853F', '#F4A460'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: '가을 웜톤 어울리는 색상 분포'
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
